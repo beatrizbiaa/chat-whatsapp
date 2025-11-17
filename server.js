@@ -20,6 +20,10 @@ io.on('connection', (socket) => {
 });
 
 // Inicia o servidor na porta 3000
-http.listen(3000, () => {
-  console.log(`Servidor rodando na porta 3000 - Link http://localhost:3000`);
+// Inicia o servidor na porta do Render (ou 3000 localmente)
+const PORT = process.env.PORT || 3000;
+
+http.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
+
